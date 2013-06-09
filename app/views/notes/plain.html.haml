@@ -1,0 +1,10 @@
+!!!Doctype
+%head
+  = stylesheet_link_tag 'plain'
+  = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Average+Sans|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800', media: 'all'
+
+%body
+  .container#content
+    %h1.title= @note.title
+    %hr
+    = raw @note.rendered_body

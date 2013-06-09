@@ -1,0 +1,46 @@
+/*
+*= require bootstrap
+*= require bootstrap-responsive
+*= require font-awesome
+*= require font-awesome-ie7
+*= require pygments
+*= require_self
+*/
+@import 'library';
+$offBlack: #3b3b41;
+$offWhite: #f5f5f5;
+
+$brightHighlight: #E0671B;
+$mediumHighlight: #B55A21;
+$darkHighlight: #994109;
+
+$darkColor: $offBlack;
+$darkColorHighlight: lighten($darkColor, 20%);
+
+$bgColor: $offWhite;
+$headerBgColor: $offBlack;
+body {
+  background-color: $bgColor;
+  font-family: 'Open Sans', sans-serif;
+}
+#content {
+  background-color: #fff;
+  padding: 20px;
+}
+h1.title {
+  color: $mediumHighlight;
+}
+
+hr {
+  background-color: $darkHighlight;
+  height: 5px;
+  @include border-radius(5px);
+}
+
+a {
+  color: $darkColor;
+  text-decoration: underline;
+  &:hover {
+    color: lighten($darkColor, 20%);
+  }
+}

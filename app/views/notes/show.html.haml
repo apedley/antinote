@@ -16,6 +16,8 @@
           = link_to @note, method: :delete, data: {confirm: 'Are you sure?'} do
             %i.fa-icon-trash
             Delete
+          &nbsp;|&nbsp;
+          = link_to "Share", "/share/#{@note.id}", method: :post
 
         .data
           %i.fa-icon-folder-close-alt

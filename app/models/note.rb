@@ -1,5 +1,6 @@
 class Note < ActiveRecord::Base
   belongs_to :category
+  has_many :shares
   
   before_save :format_body
   validates :title, :body, :category_id, presence: true

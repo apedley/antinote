@@ -38,6 +38,9 @@ class HomeController < ApplicationController
 
   end
 
+  def share
+  end
+
   private
 
   def user_create_params

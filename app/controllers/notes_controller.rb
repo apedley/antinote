@@ -42,7 +42,6 @@ class NotesController < ApplicationController
     redirect_to notes_url, notice: 'Note was destroyed.'
   end
 
-
   private
 
   def set_note
