@@ -1,12 +1,19 @@
+@import 'library';
+
 $offBlack: #3b3b41;
 $offWhite: #f5f5f5;
 
-$brightHightlight: #94E01B;
+$brightHighlight: #E0671B;
+$mediumHighlight: #B55A21;
+$darkHighlight: #994109;
+
 $darkColor: $offBlack;
 $darkColorHighlight: lighten($darkColor, 20%);
 
 $bgColor: $offWhite;
 $headerBgColor: $offBlack;
+
+
 html, body {
   height: 100%;
 }
@@ -26,6 +33,14 @@ a {
   }
 }
 
+input.btn-primary {
+  @include background-gradient($mediumHighlight, #A34103);
+  &:hover {
+    @include transition(background, 250ms);
+    background-image: none;
+    background: lighten($mediumHighlight, 5%);
+  }
+}
 // Navbar
 
 .navbar-inner {
@@ -109,6 +124,7 @@ a#upper-right-button {
   min-height: 100%;
   padding-left:20px;
   padding-bottom: 40px;
+  margin-left: -2px;
   position: relative;
 }
 
@@ -138,10 +154,15 @@ footer {
   margin: 20px;
 }
 
-// Note List
-
-
-ul.note-list {
+.panel h2 {
+  color: $darkHighlight;
+  font-weight: 500;
+  margin-left: 10px;
+  border-bottom: 3px solid $darkHighlight;
+  padding-bottom: 15px;
+}
+ul.table-list {
+  font-size: 13px;
   list-style: none;
   margin: 0;
   clear: both;
@@ -151,6 +172,27 @@ ul.note-list {
     span {
       display: inline-block;
     }
+  }
+  li:nth-child(even) {
+    background: $bgColor;
+  }
+  .even {
+    background: $bgColor;
+  }
+  li:hover {
+    background: darken($bgColor, 5%);
+  }
+  li.selected {
+    background: darken($bgColor, 5%);
+
+  }
+}
+
+// Note List
+
+
+ul.note-list {
+  li {
     span.title {
       width: 24%;
       white-space: nowrap;
@@ -212,7 +254,7 @@ form {
 
 .note {
   .header h1  {
-    background: $brightHightlight;
+    background: $brightHighlight;
     color: #fff;
     margin: 0px -20px 10px -20px;
     padding: 20px;
@@ -247,6 +289,12 @@ form {
   margin-top: 20px;
 }
 // Category List
+.multi-category-list h3 {
+  border-bottom: 3px solid $mediumHighlight;
+  padding-bottom: 10px;
+  margin-top: 20px;
+}
+
 ul.category-list {
   list-style: none;
   margin: 0;
@@ -271,3 +319,6 @@ ul.category-list {
   }  
 }
 
+span.categoryCollapse {
+  cursor: pointer;
+}

@@ -11,4 +11,9 @@ class ApplicationController < ActionController::Base
   def logged_in
     current_user != nil
   end  
+  def authorize_api
+    unless params[:api_key] == User.first.api_key
+      redirect_to :controller => "api/home", :action => "error", :error => "Unauthorized"
+    end
+  end
 end

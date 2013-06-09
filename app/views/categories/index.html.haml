@@ -1,9 +1,13 @@
 .row-fluid
-  .span12
+  .span12.multi-category-list
     - @categories.each do |category|
-      %h3= link_to "#{category.name} (#{category.notes.count})", category
+      %h3
+        = link_to "#{category.name} (#{category.notes.count})", category
+        %span{id: "toggleCategory#{category.id}", class: "categoryCollapse categoryDown rotated"}
+          %i.fa-icon-caret-down
       - @notes = category.notes.limit(5)
-      = render :partial => 'notes/list', :locals => { :notes => @notes }
+      %div.category-list-container{id: "category#{category.id}"}
+        = render :partial => 'notes/list', :locals => { :notes => @notes }
 
     = link_to new_category_path, :class => "btn new-btn" do
       %i.fa-icon-edit

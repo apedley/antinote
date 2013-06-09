@@ -1,0 +1,14 @@
+/*
+*= require bootstrap
+*= require bootstrap-responsive
+*= require font-awesome
+*= require font-awesome-ie7
+*= require pygments
+*= require_self
+*/
+
+@media print {
+  body { 
+    background-color: blue;
+  }
+}

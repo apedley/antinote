@@ -18,6 +18,12 @@ gem 'pygments.rb'
 
 gem 'simple_form'
 gem 'bcrypt-ruby'
+
+gem 'rabl'
+gem 'oj'
+# gem 'pdfkit'
+# gem "wkhtmltopdf-heroku"
+
 group :doc do
   gem 'sdoc', require: false
 end

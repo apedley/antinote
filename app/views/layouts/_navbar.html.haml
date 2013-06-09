@@ -10,19 +10,18 @@
         %span Antinote
       .nav-collapse.collapse.header-nav
         %ul.nav.pull-right
-          %li.hidden-phone
-            = link_to root_path, :class => "btn" do
-              %i.icon-home.icon-white
           %li.dropdown.hidden-phone
             %a.btn.dropdown-toggle{"data-toggle" => "dropdown", "href" => "#"}
               %i.icon-tasks.icon-white
             %ul.dropdown-menu.tasks
               %li
-                = link_to "Link one", root_path
+                = link_to "Notes", notes_path
               %li
-                = link_to "Link two", root_path
-              %li
-                = link_to "Link three", root_path
+                = link_to "New Note", new_note_path
+              
+          %li.hidden-phone
+            = link_to root_path, :class => "btn" do
+              %i.icon-home.icon-white
           / %li
           /   = link_to logout_path, :class => "btn" do
           /     %i.icon-off.icon-white

@@ -2,8 +2,8 @@ class NotesController < ApplicationController
   before_action :set_note, only: [:show, :edit, :update, :destroy]
   before_filter :authorize_user
   def show
-    @notes = Note.all
-    @note = Note.find(params[:id])
+    @category = @note.category
+    @notes = @category.notes
   end
 
   def index
@@ -41,6 +41,7 @@ class NotesController < ApplicationController
     @note.destroy
     redirect_to notes_url, notice: 'Note was destroyed.'
   end
+
 
   private
 

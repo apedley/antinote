@@ -1,5 +1,6 @@
 $ ->
   
+  # Markdown Preview
   updatePreview = ->
     rawText = $('#note_body').val()
 
@@ -17,6 +18,8 @@ $ ->
     timer = setTimeout(updatePreview, 800)
   )
 
+
+  # Main Menu Toggle
   # TODO: Rewrite this
   $('#main-menu-toggle').click(->
     span = $('#content').attr('class')

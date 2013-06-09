@@ -92,6 +92,7 @@ GEM
     minitest (4.7.4)
     multi_json (1.7.6)
     nokogiri (1.5.9)
+    oj (2.0.14)
     polyglot (0.3.3)
     posix-spawn (0.3.6)
     pry (0.9.12.2)
@@ -103,6 +104,8 @@ GEM
     pygments.rb (0.5.0)
       posix-spawn (~> 0.3.6)
       yajl-ruby (~> 1.1.0)
+    rabl (0.8.5)
+      activesupport (>= 2.3.14)
     rack (1.5.2)
     rack-contrib (1.1.0)
       rack (>= 0.9.1)
@@ -195,8 +198,10 @@ DEPENDENCIES
   jquery-rails
   launchy
   meta_request
+  oj
   pry-rails
   pygments.rb
+  rabl
   rails (= 4.0.0.rc1)
   redcarpet
   rspec-rails
