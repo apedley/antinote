@@ -98,6 +98,7 @@ GEM
     multi_json (1.7.6)
     nokogiri (1.5.9)
     oj (2.0.14)
+    pg (0.15.1)
     polyglot (0.3.3)
     posix-spawn (0.3.6)
     pry (0.9.12.2)
@@ -210,6 +211,7 @@ DEPENDENCIES
   launchy
   meta_request
   oj
+  pg
   pry-rails
   pygments.rb
   rabl
