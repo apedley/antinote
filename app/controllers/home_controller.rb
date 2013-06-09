@@ -19,6 +19,10 @@ class HomeController < ApplicationController
   def create
     @user = User.new
     if @user.update_attributes(user_create_params)
+      if Category.count < 1
+        @category = Category.new(name: 'Uncategorized')
+        @category.save
+      end
       redirect_to login_path, notice: "Created"
     else
       render "setup"

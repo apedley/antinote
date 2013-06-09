@@ -9,7 +9,7 @@
   %body
     = render :partial => "layouts/navbar"
 
-    .container-fluid
+    .container-fluid#main-container
       .row-fluid
         = render :partial => "layouts/sidebarleft"
         %noscript
@@ -19,4 +19,11 @@
               You need to have Javascript enabled.
         #content.span11
           = yield
+        = link_to logout_path, :class => "hidden-tablet hidden-phone", :id => "upper-right-button" do
+          %i.fa-icon-off
+    %footer
+      %p
+        &copy;
+        = DateTime.now.year
+
     = javascript_include_tag "application", "data-turbolinks-track" => true

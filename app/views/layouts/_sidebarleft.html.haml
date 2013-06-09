@@ -1,22 +1,22 @@
 %div#sidebar-left.span1
   .nav-collapse.sidebar-nav
     %ul.nav.nav-tabs.nav-stacked
-      %li.active
+      %li{:class => "#{'active' if controller_name == 'home'}"}
         = link_to root_url do
           %i.fa-icon-home.icon-fixed-width
           %p
             Home
-      %li
+      %li{:class => "#{'active' if controller_name == 'notes' && action_name != 'new'}"}
         = link_to notes_path do
           %i.fa-icon-list
           %p
             All Notes
-      %li
+      %li{:class => "#{'active' if controller_name == 'notes' && action_name == 'new'}"}
         = link_to new_note_path do
           %i.fa-icon-edit
           %p
             New Note
-      %li
+      %li{:class => "#{'active' if controller_name == 'categories'}"}
         = link_to categories_path do
           %i.fa-icon-folder-close
           %p

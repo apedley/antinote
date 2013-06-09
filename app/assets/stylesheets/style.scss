@@ -7,7 +7,9 @@ $darkColorHighlight: lighten($darkColor, 20%);
 
 $bgColor: $offWhite;
 $headerBgColor: $offBlack;
-
+html, body {
+  height: 100%;
+}
 body {
   background-color: $bgColor;
   font-family: 'Open Sans', sans-serif;
@@ -92,7 +94,14 @@ a#main-menu-toggle {
   cursor: pointer;
   border-right: 1px solid #4747e;
 }
-
+a#upper-right-button {
+  color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px 12px;
+  font-size: 16px;
+}
 // Content
 
 #content {
@@ -100,6 +109,7 @@ a#main-menu-toggle {
   min-height: 100%;
   padding-left:20px;
   padding-bottom: 40px;
+  position: relative;
 }
 
 #content.full-radius {
@@ -108,6 +118,17 @@ a#main-menu-toggle {
   border-radius: 5px;
   margin-right: -6px;
   margin-left: 0;
+}
+
+// Footer
+
+footer {
+  margin: 20px -20px 0 -20px;
+  padding: 10px 20px;
+  position: relative;
+  min-height: 24px;
+  background: $headerBgColor;
+  color: #fff;
 }
 
 // Dashboard
@@ -131,7 +152,14 @@ ul.note-list {
       display: inline-block;
     }
     span.title {
-      width: 79%;
+      width: 24%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    span.preview {
+      width: 54%;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -143,28 +171,31 @@ ul.note-list {
     }
   }
 
-  li.selected {
-    font-weight: bold;
-  }
+
 }
 
-ul#note-list li:nth-child(even) {
+ul.note-list li:nth-child(even) {
   background: $bgColor;
 }
-ul#note-list.even {
+ul.note-list.even {
   background: $bgColor;
 }
 
-ul#note-list li:hover {
-  background: darken($bgColor, 10%);
+ul.note-list li:hover {
+  background: darken($bgColor, 5%);
 }
-
+ul.note-list li.selected {
+  background: darken($bgColor, 5%);  
+}
 // Edit Note
 
-form.edit-note {
+form {
   margin: 20px;
   input.input-xxlarge {
     width: 80%;
+  }
+  input.input-large {
+    
   }
   textarea {
     width: 80%;
@@ -212,6 +243,9 @@ form.edit-note {
   }
 }
 
+.new-btn {
+  margin-top: 20px;
+}
 // Category List
 ul.category-list {
   list-style: none;
@@ -236,3 +270,4 @@ ul.category-list {
     }
   }  
 }
+

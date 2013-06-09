@@ -50,11 +50,11 @@ class NotesController < ApplicationController
 
 
   def create_note_params
-    params.require(:note).permit(:title, :body)
+    params.require(:note).permit(:title, :body, :category_id)
   end
 
   def update_note_params
-    params.require(:note).permit(:title, :body)
+    params.require(:note).permit(:title, :body, :category_id)
   end
 
 end

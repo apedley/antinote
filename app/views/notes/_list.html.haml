@@ -4,7 +4,10 @@
       - if note == @note
         %li.selected
           %span.title
+            %i.fa-icon-caret-right
             = note.title
+          %span.preview
+            = strip_tags note.rendered_body
           %span.date
             = note.updated_at.to_formatted_s(:short)          
       - else
@@ -12,5 +15,7 @@
           = link_to note do
             %span.title
               = note.title
+            %span.preview
+              = strip_tags note.rendered_body
             %span.date
               = note.updated_at.to_formatted_s(:short)

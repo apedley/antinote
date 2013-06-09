@@ -1,5 +1,5 @@
 $ ->
-
+  
   updatePreview = ->
     rawText = $('#note_body').val()
 

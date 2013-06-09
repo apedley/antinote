@@ -3,3 +3,6 @@
   .span12
     %h1 Notes
     = render :partial => 'notes/list', :locals => { :notes => @notes }
+    = link_to new_note_path, :class => "btn new-btn" do
+      %i.fa-icon-edit
+      New
