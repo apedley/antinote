@@ -1,16 +1,10 @@
 .row-fluid
   .span6
-    = form_for @note, html: {:class => "edit-note"} do |f|
-      .control-group
-        .controls
-          = f.text_field :title, :class => "input-xxlarge"
-      .control-group
-        .controls
-          = f.text_area :body, :rows => 20
-      .control-group
-        .controls
-          .form-buttons
-            = f.submit "Save", :class => "btn btn-primary"
+    = simple_form_for @note, html: {:class => "edit-note"} do |f|
+      = f.input :title, label: false, placeholder: 'Title', input_html: { class: 'input-xxlarge' }
+      = f.input :body, label: false, rows: 20, :input_html => { rows: 20 }
+      = f.association :category, prompt: "Choose a Company"
+      = f.submit "Save", class: 'btn btn-primary'
   .span6
     #markdown-preview.note-body
       = raw @note.rendered_body

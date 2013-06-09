@@ -10,8 +10,9 @@
  *
  *= require_self
  *= require bootstrap
-//= require bootstrap-responsive
-//= require font-awesome
-//= require font-awesome-ie7
- *= require_tree .
+ *= require bootstrap-responsive
+ *= require font-awesome
+ *= require font-awesome-ie7
+ *= require pygments
+ *= require style
  */

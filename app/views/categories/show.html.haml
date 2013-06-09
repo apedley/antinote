@@ -1,0 +1,4 @@
+.row-fluid
+  .span12
+    %h1= @category.name
+    = render :partial => 'notes/list', :locals => { :notes => @notes }

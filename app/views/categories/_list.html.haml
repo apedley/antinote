@@ -1,0 +1,8 @@
+%ul.category-list
+  - @categories.each do |category|
+    %li
+      = link_to category do
+        %span.name
+          = category.name
+        %span.notecount
+          = category.notes.count

@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130609075321) do
+ActiveRecord::Schema.define(version: 20130609131856) do
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "notes", force: true do |t|
     t.string   "title"
@@ -19,6 +25,16 @@ ActiveRecord::Schema.define(version: 20130609075321) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "rendered_body"
+    t.integer  "category_id"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "password_digest"
+    t.boolean  "setup_complete"
+    t.string   "api_key"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "auth_token"
   end
 
 end

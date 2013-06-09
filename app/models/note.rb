@@ -1,5 +1,8 @@
 class Note < ActiveRecord::Base
+  belongs_to :category
+  
   before_save :format_body
+
   def self.preview_text(text)
     self.format_text(text)
   end

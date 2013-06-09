@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
   before_action :set_note, only: [:show, :edit, :update, :destroy]
-  
+  before_filter :authorize_user
   def show
     @notes = Note.all
     @note = Note.find(params[:id])
@@ -12,6 +12,8 @@ class NotesController < ApplicationController
 
   def new
     @note = Note.new
+    @categories = Category.all
+    @note.category = Category.first
   end
 
   def create

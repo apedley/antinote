@@ -17,7 +17,10 @@
             %i.fa-icon-trash
             Delete
 
-        .date
+        .data
+          %i.fa-icon-folder-close-alt
+          = link_to @note.category.name, @note.category
+          &nbsp;
           %i.fa-icon-time
           = @note.updated_at.to_formatted_s(:short)
       .note-body

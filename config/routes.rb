@@ -1,12 +1,20 @@
 Antinote::Application.routes.draw do
 
+  resources :sessions
+  get 'login' => 'sessions#new'
+  get 'logout' => 'sessions#destroy'
   resources :notes do
     member do
       get 'preview'
     end
   end
+
+  resources :categories
+  
   get "home/dashboard"
   get "home/preview"
+  get "home/setup"
+  post "home/create"
   root 'home#dashboard'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

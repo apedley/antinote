@@ -1,15 +1,16 @@
-%ul#note-list
-  - @notes.each do |note|
-    - if note == @note
-      %li.selected
-        %span.title
-          = note.title
-        %span.date
-          = note.updated_at.to_formatted_s(:short)          
-    - else
-      %li
-        = link_to note do
+%ul.note-list
+  - unless @notes.nil?
+    - @notes.each do |note|
+      - if note == @note
+        %li.selected
           %span.title
             = note.title
           %span.date
-            = note.updated_at.to_formatted_s(:short)
+            = note.updated_at.to_formatted_s(:short)          
+      - else
+        %li
+          = link_to note do
+            %span.title
+              = note.title
+            %span.date
+              = note.updated_at.to_formatted_s(:short)

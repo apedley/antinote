@@ -16,6 +16,8 @@ gem 'jbuilder', '~> 1.0.1'
 gem 'redcarpet'
 gem 'pygments.rb'
 
+gem 'simple_form'
+gem 'bcrypt-ruby'
 group :doc do
   gem 'sdoc', require: false
 end
