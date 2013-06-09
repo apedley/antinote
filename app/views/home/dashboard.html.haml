@@ -1,0 +1,8 @@
+.row-fluid
+  .span6.panel
+    .actions
+      = link_to new_note_path, :class => "btn" do
+        %i.fa-icon-edit
+        New
+    %h2 Notes
+    = render :partial => 'notes/list', :locals => { :notes => @notes }

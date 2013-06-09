@@ -1,0 +1,44 @@
+.navbar
+  .navbar-inner
+    .container-fluid
+      %a.btn.btn-navbar{"data-toggle" => "collapse", "data-target" => ".nav-collapse"}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+
+      = link_to root_path, :class => 'brand' do
+        %span Antinote
+      .nav-collapse.collapse.header-nav
+        %ul.nav.pull-right
+          %li.hidden-phone
+            = link_to root_path, :class => "btn" do
+              %i.icon-home.icon-white
+          %li.dropdown.hidden-phone
+            %a.btn.dropdown-toggle{"data-toggle" => "dropdown", "href" => "#"}
+              %i.icon-tasks.icon-white
+            %ul.dropdown-menu.tasks
+              %li
+                = link_to "Link one", root_path
+              %li
+                = link_to "Link two", root_path
+              %li
+                = link_to "Link three", root_path
+          %li
+            = link_to root_path, :class => "btn" do
+              %i.icon-off.icon-white
+      / %ul.nav.pull-right
+      /   %li
+      /     hi
+      /   %li.dropdown.hidden-phone
+      /     %a.btn.dropdown-toggle{"data-toggle" => "dropdown", "href" => "#"}
+      /       %i.halflings-icon.tasks
+      /     %ul.dropdown-menu.tasks
+      /       %li
+      /         %span.dropdown-menu-title
+      /           title here
+      /       %li
+      /         = link_to "Link one", root_path
+      /       %li
+      /         = link_to "Link two", root_path
+      /       %li
+      /         = link_to "Link three", root_path

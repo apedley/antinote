@@ -1,0 +1,210 @@
+$offBlack: #3b3b41;
+$offWhite: #f5f5f5;
+
+$brightHightlight: #94E01B;
+$darkColor: $offBlack;
+$darkColorHighlight: lighten($darkColor, 20%);
+
+$bgColor: $offWhite;
+$headerBgColor: $offBlack;
+
+body {
+  background-color: $bgColor;
+  font-family: 'Open Sans', sans-serif;
+}
+h1, h2, h3 {
+  font-weight: 300;
+}
+
+a {
+  color: $darkColor;
+  &:hover {
+    color: $darkColorHighlight;
+    text-decoration: none;
+  }
+}
+
+// Navbar
+
+.navbar-inner {
+  background: $headerBgColor;
+  color: #fff;
+}
+
+a.brand span {
+  color: #fff;
+  text-shadow: none;
+  padding-left: 10px;
+}
+
+.header-nav .btn {
+  display: inline-block;
+  padding: 21px 20px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  text-shadow: 1 -1px 1px rgba(255, 255, 255, 0.75);
+  background: transparent;
+  border: none;
+  border-left: 1px solid #47474e;
+  border-right: 1px solid #47474e;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+// Main Sidebar
+
+
+#sidebar-left {
+  li a {
+    margin-bottom: -1px;
+    color: #aaa;
+    text-align: center;
+    margin-bottom: 10px;
+    border: none; 
+  }
+  li.active a {
+    background: #fff;
+    color: $darkColor;
+  }
+  li a i {
+    font-size: 22px;
+  }
+  li a p {
+    margin: 0;
+  }
+}
+
+a#main-menu-toggle {
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 12px;
+  font-size: 16px;
+  text-shadow: none;
+  text-decoration: none;
+  cursor: pointer;
+  border-right: 1px solid #4747e;
+}
+
+// Content
+
+#content {
+  background: #fff;
+  min-height: 100%;
+  padding-left:20px;
+  padding-bottom: 40px;
+}
+
+#content.full-radius {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin-right: -6px;
+  margin-left: 0;
+}
+
+// Dashboard
+
+.panel .actions {
+  float: right;
+  margin: 20px;
+}
+
+// Note List
+
+
+ul#note-list {
+  list-style: none;
+  margin: 0;
+  clear: both;
+  li {
+    padding: 5px 10px;
+    cursor: pointer;
+    span {
+      display: inline-block;
+    }
+    span.title {
+      width: 79%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    span.date {
+      width: 20%;
+      text-align: right;
+    }
+  }
+
+  li.selected {
+    font-weight: bold;
+  }
+}
+
+ul#note-list li:nth-child(even) {
+  background: $bgColor;
+}
+ul#note-list.even {
+  background: $bgColor;
+}
+
+ul#note-list li:hover {
+  background: darken($bgColor, 10%);
+}
+
+// Edit Note
+
+form.edit-note {
+  margin: 20px;
+  input.input-xxlarge {
+    width: 80%;
+  }
+  textarea {
+    width: 80%;
+  }
+
+
+}
+
+#markdown-preview {
+  margin-top: 20px;
+}
+
+// Show Note
+
+.note {
+  .header h1  {
+    background: $brightHightlight;
+    color: #fff;
+    margin: 0px -20px 10px -20px;
+    padding: 20px;
+    font-weight: 300;
+    font-family: "Open Sans" sans-serif;
+  }
+
+  .links {
+    display: inline-block;
+    width: 70%;
+  }
+
+  .date {
+    display: inline-block;
+    width: 29%;
+    text-align: right;
+  }
+
+
+}
+
+.note-body {
+  a {
+    text-decoration: underline;
+  }
+}

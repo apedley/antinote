@@ -1,0 +1,20 @@
+%div#sidebar-left.span1
+  .nav-collapse.sidebar-nav
+    %ul.nav.nav-tabs.nav-stacked
+      %li.active
+        = link_to root_url do
+          %i.fa-icon-home.icon-fixed-width
+          %p
+            Home
+      %li
+        = link_to notes_path do
+          %i.fa-icon-list
+          %p
+            All Notes
+      %li
+        = link_to new_note_path do
+          %i.fa-icon-edit
+          %p
+            New Note
+%a#main-menu-toggle.hidden-phone.open
+  %i.fa-icon-reorder

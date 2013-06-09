@@ -1,0 +1,24 @@
+
+.row-fluid
+  .span5
+    %h1 Notes
+    = render :partial => 'notes/list', :locals => { :notes => @notes }
+  .span7
+    .note
+      .header
+        %h1
+          = @note.title
+        .links
+          = link_to edit_note_path(@note) do
+            %i.fa-icon-edit
+            Edit
+          &nbsp;|&nbsp;
+          = link_to @note, method: :delete, data: {confirm: 'Are you sure?'} do
+            %i.fa-icon-trash
+            Delete
+
+        .date
+          %i.fa-icon-time
+          = @note.updated_at.to_formatted_s(:short)
+      .note-body
+        = raw @note.rendered_body
