@@ -17,3 +17,4 @@
 /.idea
 /.rvmrc
 /public/uploads
+/config/database.yml
