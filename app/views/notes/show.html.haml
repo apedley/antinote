@@ -17,7 +17,9 @@
             %i.icon-trash
             Delete
           &nbsp;|&nbsp;
-          = link_to "Share", "/share/#{@note.id}", method: :post
+          = link_to "/share/#{@note.id}", method: :post do
+            %i.icon-share
+            Share
 
         .data
           %i.icon-folder-close-alt
