@@ -3,6 +3,7 @@
   %head
     %meta{name: "viewport", content:"width=device-width, initial-scale=1"}
     = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+    = stylesheet_link_tag 'http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.min.css'
     = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Average+Sans|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800', media: 'all'
     
     = csrf_meta_tags
@@ -20,7 +21,7 @@
         #content.span11
           = yield
         = link_to logout_path, :class => "hidden-tablet hidden-phone", :id => "upper-right-button" do
-          %i.fa-icon-off
+          %i.icon-off
     %footer
       %p
         &copy;

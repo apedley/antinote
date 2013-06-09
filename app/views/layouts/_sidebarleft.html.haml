@@ -3,23 +3,23 @@
     %ul.nav.nav-tabs.nav-stacked
       %li{:class => "#{'active' if controller_name == 'home'}"}
         = link_to root_url do
-          %i.fa-icon-home.icon-fixed-width
+          %i.icon-home.icon-fixed-width
           %p
             Home
       %li{:class => "#{'active' if controller_name == 'notes' && action_name != 'new'}"}
         = link_to notes_path do
-          %i.fa-icon-list
+          %i.icon-list
           %p
             Notes
       %li{:class => "#{'active' if controller_name == 'notes' && action_name == 'new'}"}
         = link_to new_note_path do
-          %i.fa-icon-edit
+          %i.icon-edit
           %p
             New Note
       %li{:class => "#{'active' if controller_name == 'categories'}"}
         = link_to categories_path do
-          %i.fa-icon-folder-close
+          %i.icon-folder-close
           %p
             Categories
 %a#main-menu-toggle.hidden-phone.open
-  %i.fa-icon-reorder
+  %i.icon-reorder

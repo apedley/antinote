@@ -2,14 +2,14 @@
   .span6.panel
     .actions
       = link_to new_note_path, :class => "btn" do
-        %i.fa-icon-edit
+        %i.icon-edit
         New
     %h2 Notes
     = render :partial => 'notes/list', :locals => { :notes => @notes }
   .span6.panel
     .actions
       = link_to new_category_path, :class => "btn" do
-        %i.fa-icon-edit
+        %i.icon-edit
         New
     %h2 Categories
     = render :partial => 'categories/list', :locals => { :categories => @categories }

@@ -10,20 +10,20 @@
           = @note.title
         .links
           = link_to edit_note_path(@note) do
-            %i.fa-icon-edit
+            %i.icon-edit
             Edit
           &nbsp;|&nbsp;
           = link_to @note, method: :delete, data: {confirm: 'Are you sure?'} do
-            %i.fa-icon-trash
+            %i.icon-trash
             Delete
           &nbsp;|&nbsp;
           = link_to "Share", "/share/#{@note.id}", method: :post
 
         .data
-          %i.fa-icon-folder-close-alt
+          %i.icon-folder-close-alt
           = link_to @note.category.name, @note.category
           &nbsp;
-          %i.fa-icon-time
+          %i.icon-time
           = @note.updated_at.to_formatted_s(:short)
       .note-body
         = raw @note.rendered_body
