@@ -27,5 +27,7 @@ module Antinote
     config.assets.paths << Rails.root.join("vendor", "fonts")
     # require 'pdfkit'
     # config.middleware.use PDFKit::Middleware
+
+    config.assets.initialize_on_precompile = false
   end
 end
