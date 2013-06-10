@@ -3,6 +3,7 @@ class HomeController < ApplicationController
   before_filter :authorize_user, only: [:preview, :dashboard]
 
   def dashboard
+
     @notes = Note.all
     @categories = Category.all
   end
@@ -17,13 +18,14 @@ class HomeController < ApplicationController
   end
 
   def create
+
     @user = User.new
-    if @user.update_attributes(user_create_params)
+    if @user.update_attributes(user_create_params) && User.count == 1
       if Category.count < 1
         @category = Category.new(name: 'Uncategorized')
         @category.save
       end
-      redirect_to login_path, notice: "Created"
+      redirect_to login_path, notice: "Account set up.  You may now log in."
     else
       render "setup"
     end

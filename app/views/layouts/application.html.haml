@@ -6,6 +6,7 @@
     = stylesheet_link_tag 'http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.min.css'
     = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Average+Sans|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800', media: 'all'
     = favicon_link_tag '/favicon.ico'
+    %title= full_title(yield(:title))
     = csrf_meta_tags
   %body
     = render :partial => "layouts/navbar"

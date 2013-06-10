@@ -1,6 +1,11 @@
 class SessionsController < ApplicationController
   def new
-    render :layout => false
+    if User.count == 1
+      render :layout => false
+    else
+      redirect_to home_setup_path
+    end
+    
   end
 
   def create
@@ -14,8 +19,8 @@ class SessionsController < ApplicationController
 
       redirect_to root_url, :alert => "logged in successfully"
     else
-      flash.now.alert = "Invalid login or password"
-      render "new"
+      flash[:error] = "Invalid password"
+      render "new", :layout => false
     end
   end
 

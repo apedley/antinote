@@ -4,7 +4,7 @@
     %meta{name: "viewport", content:"width=device-width, initial-scale=1"}
     = stylesheet_link_tag "loggedout", media: "all", "data-turbolinks-track" => true
     = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Average+Sans|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800', media: 'all'
-    
+    %title= full_title('Login')
     = csrf_meta_tags
   %body
     .container-fluid
@@ -12,6 +12,18 @@
         .row-fluid
           .static-box
             %h2 Login
+            - if flash[:notice]
+              .alert.alert-info
+                %button.close{"type" => "button", "data-dismiss" => "alert"}
+                  &times;
+                = flash[:notice] if flash[:notice]
+
+            - if flash[:error]
+              .alert.alert-error
+                %button.close{"type" => "button", "data-dismiss" => "alert"}
+                  &times;            
+                = flash[:error] if flash[:error]
+
             = form_tag '/sessions', class: "form-horizontal" do
               .control-group
                 .control
