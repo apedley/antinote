@@ -29,5 +29,6 @@ module Antinote
     # config.middleware.use PDFKit::Middleware
 
     config.assets.initialize_on_precompile = false
+    config.assets.precompile += ['plain.css', 'loggedout.css']
   end
 end
