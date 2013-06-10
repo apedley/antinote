@@ -1,0 +1,17 @@
+%ul.note-list.table-list.table-list-thin
+  - unless @notes.nil?
+    - @notes.each do |note|
+      - if note == @note
+        %li.selected
+          %span.title
+            %i.icon-caret-right
+            = note.title
+          %span.date
+            = note.updated_at.to_formatted_s(:short)          
+      - else
+        %li
+          = link_to note do
+            %span.title
+              = note.title
+            %span.date
+              = note.updated_at.to_formatted_s(:short)

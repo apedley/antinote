@@ -1,8 +1,6 @@
 object @category
 attributes :id, :name
 
-node :notes do |category|
-  category.notes do |note|
-    partial("api/notes/info", :object => note)
-  end
+child :notes, :object_root => false do
+  attributes :id, :title, :body_preview, :updated_short
 end

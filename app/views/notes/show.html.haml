@@ -2,7 +2,7 @@
 .row-fluid
   .span5
     %h1= @category.name
-    = render :partial => 'notes/list', :locals => { :notes => @notes }
+    = render :partial => 'notes/thin_list', :locals => { :notes => @notes }
     %h5= link_to 'View All', notes_path
   .span7
     .note

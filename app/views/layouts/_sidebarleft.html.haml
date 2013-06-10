@@ -6,6 +6,11 @@
           %i.icon-home.icon-fixed-width
           %p
             Home
+      %li{:class => "#{'active' if controller_name == 'home'}"}
+        = link_to home_dashboardtwo_path do
+          %i.icon-home.icon-fixed-width
+          %p
+            Home2            
       %li{:class => "#{'active' if controller_name == 'notes' && action_name != 'new'}"}
         = link_to notes_path do
           %i.icon-list

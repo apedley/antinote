@@ -1,7 +1,7 @@
 module Api
   class CategoriesController < ApplicationController
     before_action :set_note, only: [:show, :edit, :update, :destroy]
-    before_filter :authorize_api
+#    before_filter :authorize_api
     def index
       @categories = Category.all
     end

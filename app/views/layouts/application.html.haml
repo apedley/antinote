@@ -8,12 +8,14 @@
     = favicon_link_tag '/favicon.ico'
     %title= full_title(yield(:title))
     = csrf_meta_tags
+    = yield(:header) if content_for? :header
   %body
     = render :partial => "layouts/navbar"
 
     .container-fluid#main-container
       .row-fluid
         = render :partial => "layouts/sidebarleft"
+
         %noscript
           .alert.alert-block.span11
             %h4.alert-heading Warning
@@ -29,3 +31,5 @@
         = DateTime.now.year
 
     = javascript_include_tag "application", "data-turbolinks-track" => true
+
+    = yield(:js) if content_for? :js

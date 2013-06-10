@@ -21,6 +21,7 @@ Antinote::Application.routes.draw do
   end
 
   get "home/dashboard"
+  get "home/dashboardtwo"
   get "home/preview"
   get "home/setup"
   get "home/share"

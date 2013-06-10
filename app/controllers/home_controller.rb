@@ -8,6 +8,10 @@ class HomeController < ApplicationController
     @categories = Category.all
   end
 
+  def dashboardtwo
+    
+  end
+
   def setup
     if User.count > 0 
       redirect_to login_path

@@ -213,7 +213,14 @@ ul.note-list {
       text-align: right;
     }
   }
-
+  &.table-list-thin {
+    span.title {
+      width: 69%;
+    }
+    span.date {
+      width: 30%; 
+    }
+  }
 
 }
 
@@ -230,6 +237,8 @@ ul.note-list li:hover {
 ul.note-list li.selected {
   background: darken($bgColor, 5%);  
 }
+
+
 // Edit Note
 
 form {
@@ -250,6 +259,8 @@ form {
 #markdown-preview {
   margin-top: 20px;
 }
+
+
 
 // Show Note
 

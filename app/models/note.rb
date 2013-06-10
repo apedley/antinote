@@ -18,6 +18,13 @@ class Note < ActiveRecord::Base
   def get_pdf
     
   end
+
+  def updated_short
+    self.updated_at.to_formatted_s(:short)
+  end
+  def body_preview
+    Nokogiri::HTML(self.rendered_body).text.gsub(/\n/, '')
+  end
   private
 
   def self.format_text(text)

@@ -1,0 +1,71 @@
+- content_for :header do
+  = stylesheet_link_tag 'single'
+
+.row-fluid{"data-no-turbolink" => true}
+  :plain
+    <div id="viewer" ng-app="antinoteApp" ng-controller="AppCtrl">
+      <div class="categories span6" ng-controller="CategoryCtrl">
+        <div class="category" ng-repeat="category in categories">
+          <h2 ng-click="showCategory(category)">{{ category.name }}</h2>
+          <h5 ng-click="showAllCategories()" ng-show="singleCategoryShown">View All</h5>
+          <ul class="note-list table-list">
+            <li class="note" ng-repeat="note in category.notes" ng-click="showNote(note)">
+                <span class="title">
+                  {{ note.title }}
+                </span>
+                <span class="preview">
+                  {{ note.body_preview }}
+                </span>
+                <span class="date">
+                  {{ note.updated_short }}
+                </span>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+      <div class="note span6" ng-controller="NoteCtrl" ng-show="selectedNote">
+        <div class="header">
+          <h1 ng-dblclick="editTitle(selectedNote)">
+          <span  ng-hide="editingTitle">
+          {{ selectedNote.title }}
+          </span>
+          <form ng-submit="doneEditingTitle()" ng-show="editingTitle">
+            <input ng-blur="doneEditingTitle()" ng-show="editingTitle" ng-model="selectedNote.title">
+          </form>
+          </h1>
+
+          <div class="links">
+            <a href="#">
+              <i class="icon-edit"></i>
+              Edit
+            </a>
+            &nbsp;|&nbsp;
+            <a href="#">
+              <i class="icon-trash"></i>
+              Delete
+            </a>
+            &nbsp;|&nbsp;
+            <a href="#">
+              <i class="icon-share"></i>
+              Share
+            </a>
+          </div>
+
+          <div class="data">
+            <i class="icon-folder-close-alt"></i>
+            <a href="#">{{ selectedNote.category.name }}
+            &nbsp;
+            <i class="icon-time"></i>
+            {{ selectedNote.updated_short }}
+          </div>
+        </div>
+        <div class="note-body" ng-bind-html-unsafe="selectedNote.rendered_body">
+          
+        </div>
+      </div>
+    </div>
+
+
+- content_for :js do
+  = javascript_include_tag 'single'

@@ -19,7 +19,7 @@ gem 'pygments.rb'
 
 gem 'simple_form'
 gem 'bcrypt-ruby'
-
+gem 'nokogiri'
 gem 'rabl'
 gem 'oj'
 gem 'unicorn'
@@ -37,6 +37,9 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'thin'
+  gem 'rack-livereload'
+  gem 'guard'
+  gem 'guard-livereload'
 end
 
 group :test do
