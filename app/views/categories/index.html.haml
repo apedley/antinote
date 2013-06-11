@@ -2,13 +2,22 @@
 .row-fluid
   .span12.multi-category-list
     - @categories.each do |category|
-      %h3
-        = link_to "#{category.name} (#{category.notes.count})", category
-        %span{id: "toggleCategory#{category.id}", class: "categoryCollapse categoryDown rotated"}
-          %i.icon-caret-down
-      - @notes = category.notes.limit(5)
-      %div.category-list-container{id: "category#{category.id}"}
-        = render :partial => 'notes/list', :locals => { :notes => @notes }
+      .category
+        .actions
+          = link_to edit_category_path(category), class: 'btn' do
+            %i.icon-edit
+            Edit        
+          = link_to category, method: :delete, class: 'btn', data: {confirm: 'Are you sure?'} do
+            %i.icon-trash
+            Delete
+
+        %h3
+          = link_to "#{category.name} (#{category.notes.count})", category
+          %span{id: "toggleCategory#{category.id}", class: "categoryCollapse categoryDown rotated"}
+            %i.icon-caret-down
+        - @notes = category.notes.limit(5)
+        %div.category-list-container{id: "category#{category.id}"}
+          = render :partial => 'notes/list', :locals => { :notes => @notes }
 
     = link_to new_category_path, :class => "btn new-btn" do
       %i.icon-edit

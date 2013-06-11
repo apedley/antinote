@@ -32,7 +32,7 @@ a {
     text-decoration: none;
   }
 }
-
+/*
 input.btn-primary {
   @include background-gradient($mediumHighlight, #A34103);
   &:hover {
@@ -41,6 +41,7 @@ input.btn-primary {
     background: lighten($mediumHighlight, 5%);
   }
 }
+*/
 // Navbar
 
 .navbar-inner {
@@ -319,10 +320,20 @@ form {
   margin-top: 20px;
 }
 // Category List
-.multi-category-list h3 {
-  border-bottom: 3px solid $mediumHighlight;
-  padding-bottom: 10px;
-  margin-top: 20px;
+.multi-category-list {
+  h3 {
+    border-bottom: 3px solid $mediumHighlight;
+    padding-bottom: 10px;
+    margin-top: 20px;
+  }
+  .category {
+    .actions {
+      float: right;
+      a {
+        margin-right: 20px;
+      }
+    }
+  }
 }
 
 ul.category-list {
