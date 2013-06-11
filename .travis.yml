@@ -7,10 +7,6 @@ env:
   - DB=sqlite
   - DB=mysql
   - DB=postgresql
-script:
-  - RAILS_ENV=test bundle exec rake --trace db:migrate spec
-before_script:
-  - mysql -e 'create database antinote_test'
-  - psql -c 'create database antinote_test' -U postgres
+script: "bundle exec rake spec:ci"
 notifications:
   email: false
