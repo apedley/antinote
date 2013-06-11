@@ -22,17 +22,36 @@ gem 'rabl'
 gem 'oj'
 gem 'unicorn'
 
+group :doc do
+  gem 'sdoc', require: false
+end
+
+group :development do
+  gem 'pry-rails'
+  gem 'meta_request'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'thin'
+  gem 'rack-livereload'
+  gem 'guard'
+  gem 'guard-livereload'
+end
 
 group :test do
   gem 'factory_girl'
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'launchy'
 end
 
 group :development, :test do
   gem 'rspec-rails' 
   gem 'sqlite3'
+  gem 'guard-rspec'
+  gem 'spork-rails', github: 'railstutorial/spork-rails'
+  gem 'guard-spork'
+  gem 'childprocess'
 end
 
 group :production do
