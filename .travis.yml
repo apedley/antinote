@@ -4,10 +4,10 @@ rvm:
 env:
   - DB=sqlite
 script:
-  - RAILS_ENV=test bundle exec rake --trace db:migrate spec
+  - rake db:test:prepare
+  - bundle exec rake spec
 before_script:
   - cp config/database.travis.yml config/database.yml
-  - apt-get install libgtkmm-2.4-dev libgtkmm3.0-dev libgtkmm-2.4-1c2a libgtkmm-3.0-1
   # - mysql -e 'create database antinote_test'
   # - psql -c 'create database antinote_test' -U postgres
 notifications:
