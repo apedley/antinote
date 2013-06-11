@@ -1,31 +1,17 @@
-sqlite: &sqlite
+development:
   adapter: sqlite3
-  database: db/<%= Rails.env %>.sqlite3
-
-mysql: &mysql
-  adapter: mysql2
-  username: root
-  password:
-  database: antinote_<%= Rails.env %>
-
-postgresql: &postgresql
-  adapter: postgresql
-  username: postgres
-  password:
-  database: antinote_<%= Rails.env %>
-  min_messages: ERROR
-
-defaults: &defaults
+  database: db/development.sqlite3
   pool: 5
   timeout: 5000
-  host: localhost
-  <<: *<%= ENV['DB'] || "postgresql" %>
-
-development:
-  <<: *defaults
 
 test:
-  <<: *defaults
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
 
 production:
-  <<: *defaults
+  adapter: sqlite3
+  database: db/production.sqlite3
+  pool: 5
+  timeout: 5000
