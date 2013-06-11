@@ -27,8 +27,13 @@
           %i.icon-off
     %footer
       %p
-        &copy;
-        = DateTime.now.year
+        %span#copyright-text
+          &copy;
+          = DateTime.now.year
+        %span
+          = link_to 'Github', 'https://github.com/chorkpop/antinote'
+
+
 
     = javascript_include_tag "application", "data-turbolinks-track" => true
 

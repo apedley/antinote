@@ -1,6 +1,6 @@
 class Note < ActiveRecord::Base
   belongs_to :category
-  has_many :shares
+  has_one :share
   
   before_save :format_body
   validates :title, :body, :category_id, presence: true
@@ -15,16 +15,20 @@ class Note < ActiveRecord::Base
     @toc_markdown.render(body)
   end
 
-  def get_pdf
-    
-  end
-
   def updated_short
-    self.updated_at.to_formatted_s(:short)
+    self.updated_at.utc.to_formatted_s(:short)
   end
   def body_preview
     Nokogiri::HTML(self.rendered_body).text.gsub(/\n/, '')
   end
+  
+  def get_share
+    if self.share.nil?
+      self.share = Share.create(note: self)
+    end
+    self.share
+  end
+
   private
 
   def self.format_text(text)

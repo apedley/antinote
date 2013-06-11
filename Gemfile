@@ -31,7 +31,6 @@ group :doc do
 end
 
 group :development do
-  gem 'rspec-rails'
   gem 'pry-rails'
   gem 'meta_request'
   gem 'better_errors'
@@ -43,16 +42,21 @@ group :development do
 end
 
 group :test do
-  gem 'rspec-rails'
   gem 'factory_girl'
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'database_cleaner'
   gem 'launchy'
+  gem 'libnotify'
 end
 
-group :development, :test do 
+group :development, :test do
+  gem 'rspec-rails' 
   gem 'sqlite3'
+  gem 'guard-rspec'
+  gem 'spork-rails', github: 'railstutorial/spork-rails'
+  gem 'guard-spork'
+  gem 'childprocess'
 end
 
 group :production do
