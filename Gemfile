@@ -23,8 +23,6 @@ gem 'nokogiri'
 gem 'rabl'
 gem 'oj'
 gem 'unicorn'
-# gem 'pdfkit'
-# gem "wkhtmltopdf-heroku"
 
 group :doc do
   gem 'sdoc', require: false
