@@ -1,6 +1,5 @@
 language: ruby
 bundler_args: --without development
-gemfile: Gemfile.travis
 rvm:
   - 2.0.0
 env:
@@ -11,7 +10,7 @@ script:
   - RAILS_ENV=test bundle exec rake --trace db:migrate test
 before_script:
   - cp config/database.travis.yml config/database.yml
-  - mysql -e 'create database myapp_test'
-  - psql -c 'create database myapp_test' -U postgres
+  - mysql -e 'create database antinote_test'
+  - psql -c 'create database antinote_test' -U postgres
 notifications:
   email: false
