@@ -7,6 +7,10 @@ env:
   - DB=sqlite
   - DB=mysql
   - DB=postgresql
-script: "bundle exec rake spec:ci"
+script:
+  - RAILS_ENV=test bundle exec rake --trace db:migrate test
+before_script:
+  - mysql -e 'create database myapp_test'
+  - psql -c 'create database myapp_test' -U postgres
 notifications:
   email: false
