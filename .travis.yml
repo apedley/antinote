@@ -1,5 +1,6 @@
 language: ruby
 bundler_args: --without development
+gemfile: Gemfile.travis
 rvm:
   - 2.0.0
 env:
