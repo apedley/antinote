@@ -10,7 +10,6 @@ gem 'haml-rails'
 gem 'foreman'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.0.1'
@@ -29,7 +28,6 @@ group :doc do
 end
 
 group :development do
-  gem 'pry-rails'
   gem 'meta_request'
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -42,6 +40,7 @@ end
 group :test do
   gem 'factory_girl'
   gem 'factory_girl_rails'
+  
   gem 'capybara'
   gem 'database_cleaner'
   gem 'launchy'
@@ -49,6 +48,7 @@ group :test do
 end
 
 group :development, :test do
+  gem 'pry-rails'
   gem 'rspec-rails' 
   gem 'sqlite3'
   gem 'guard-rspec'
