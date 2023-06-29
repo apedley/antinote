@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/railstutorial/spork-rails.git
+  remote: https://github.com/railstutorial/spork-rails.git
   revision: 5db525af2f917047057f546bc1ac2574d1c6b11e
   specs:
     spork-rails (3.2.1)
@@ -133,11 +133,11 @@ GEM
       railties
     method_source (0.8.1)
     mime-types (1.23)
-    mini_portile (0.5.0)
+    mini_portile2 (2.1.0)
     minitest (4.7.4)
     multi_json (1.7.6)
-    nokogiri (1.6.0)
-      mini_portile (~> 0.5.0)
+    nokogiri (1.6.8.1)
+      mini_portile2 (~> 2.1.0)
     oj (2.0.14)
     pg (0.15.1)
     polyglot (0.3.3)
